@@ -1,5 +1,5 @@
 # Climax-Sentiment
-Exploring Emotions in Gaspar Noe's Masterpiece:
+## Exploring Emotions in Gaspar Noe's Masterpiece:
 
 Gaspar Noe's "Climax" is a French horror-drama film that delves deep into the human psyche and emotions. The movie's plot revolves around a dance troupe's descent into madness after someone spikes their sangria with LSD. The result is a terrifying exploration of human emotions, including fear, anger, lust, and paranoia.
 For instance, analyzing the sentiments expressed in the dialogue and actions of the characters can reveal the dominant emotions present in the movie. Additionally, sentiment analysis of the audience's reactions to the movie can also offer a broader understanding of how the film resonated with viewers.
