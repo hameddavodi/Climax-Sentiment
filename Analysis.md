@@ -66,5 +66,7 @@ Subjectivity, on the other hand, is a measure of the degree to which the text ex
 
 ![2](https://user-images.githubusercontent.com/109058050/233825585-cba7f66f-61a2-441d-aa63-dfdc957a84d6.png)
 
+The fact that the average subjectivity score is near 0 suggests that the majority of the sentences in the movie are expressing objective statements or facts, rather than personal opinions or beliefs. This could indicate that the movie is presenting a narrative that is focused on presenting information or events in a straightforward and objective manner, rather than trying to persuade or influence the audience's emotions or opinions.
 
+The average polarity score being between 0 and 0.25 suggests that the overall sentiment expressed in the movie is slightly positive, but not overwhelmingly so. This could indicate that the movie presents a balanced view of the events or themes being explored, rather than being overly biased or extreme in its portrayal. It is worth noting that the average polarity score is only one measure of sentiment, and it is important to look at the distribution of polarity scores across the movie to get a more complete picture of the sentiment expressed.
 
