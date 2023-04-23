@@ -39,7 +39,7 @@ sensentiment(blob)
 ```
 ### 2- Some quick look into data
 
-next step is to check the data with histograms of polarity and subjectivity.
+Next step is to check the data with histograms of polarity and subjectivity.
 
 ```python
 ax=df_sentiment["polarities"].hist(bins=20, density=True,stacked=False,color='teal', alpha=0.6)
