@@ -62,5 +62,9 @@ Polarity is a measure of the sentiment expressed in a text, with a range from -1
 
 Subjectivity, on the other hand, is a measure of the degree to which the text expresses an opinion or personal belief, rather than a fact. It ranges from 0 to 1, where 0 represents an objective statement or fact, and 1 represents a highly subjective statement expressing personal opinion or belief. Subjectivity is calculated by analyzing the use of words and phrases that indicate the presence of a personal opinion or belief, such as "I think", "I feel", or "in my opinion".
 
+![1](https://user-images.githubusercontent.com/109058050/233825584-a37c47c5-f837-4529-9282-1328f7df0fd1.png)
+
+![2](https://user-images.githubusercontent.com/109058050/233825585-cba7f66f-61a2-441d-aa63-dfdc957a84d6.png)
+
 
 
