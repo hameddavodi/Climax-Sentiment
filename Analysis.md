@@ -70,3 +70,26 @@ The fact that the average subjectivity score is near 0 suggests that the majorit
 
 The average polarity score being between 0 and 0.25 suggests that the overall sentiment expressed in the movie is slightly positive, but not overwhelmingly so. This could indicate that the movie presents a balanced view of the events or themes being explored, rather than being overly biased or extreme in its portrayal. It is worth noting that the average polarity score is only one measure of sentiment, and it is important to look at the distribution of polarity scores across the movie to get a more complete picture of the sentiment expressed.
 
+then:
+```python
+import nltk
+tags = nltk.pos_tag(words)
+df_tags=pd.DataFrame(tags,columns=['words','pos'])
+df_tags=df_tags.groupby(['pos']).count().sort_values('words', ascending=False)
+df_tags=df_tags.head()
+
+import matplotlib.pyplot as plt
+ax = df_t.plot(kind='bar')
+
+# set the title and axis labels
+ax.set_title('Word Frequencies')
+ax.set_xlabel('Part of Speech')
+ax.set_ylabel('Frequency')
+plt.figure(figsize=(8, 20))
+# display the plot
+plt.show()
+```
+this code performs POS tagging on a list of words, creates a bar chart of the top five most frequent POS tags, and displys it.
+
+![3](https://user-images.githubusercontent.com/109058050/233826770-bdbe45ba-6c7e-4f6b-b2a2-0aabe9ca0b35.png)
+ays it.
