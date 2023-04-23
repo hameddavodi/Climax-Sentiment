@@ -189,14 +189,22 @@ plt.show()
 
  Linear regression red line indicates that during the movie, average sentiments of the sentences become more and more negative. 
 
-Also we can be more specific with KMeans and KNeighbors. 
+Also we can be more specific with KMeans and KNeighbors. Here are the steps that the code is performing:
+
+   - Import the necessary libraries: pandas, numpy, matplotlib, and scikit-learn.
+   - Load the dataset into a pandas DataFrame object.
+   - Extract the predictor variable (time) and the target variable (compound) from the DataFrame.
+   - Apply k-means clustering to the target variable to group the data into 3 clusters.
+   - Apply KNN regression to predict the 'compound' values for each data point based on the predictor variable.
+   - Plot the actual 'compound' values with color-coded cluster labels.
+   - Plot the predicted 'compound' values as red dots.
+   
 ```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.neighbors import KNeighborsRegressor
-
 
 # define the predictor and target variables
 X = df.index.values.reshape(-1, 1) # use index as predictor variable
@@ -228,3 +236,10 @@ plt.show()
 and lets see the results:
 
 ![7](https://user-images.githubusercontent.com/109058050/233851168-ec142dbc-9882-4637-b58c-75e05dacdaae.png)
+
+KNN is a non-parametric machine learning algorithm that is often used for regression tasks.
+The KNN algorithm works by finding the k closest data points to the query point (in this case, a specific 'time' value), and then taking the average (or weighted average) of the target variable values for those k neighbors. The predicted value for the query point is then set to this average.
+
+To interpret the predicted 'compound' values, you can compare them to the actual 'compound' values plotted in the same figure. If the predicted values closely follow the pattern of the actual values, it suggests that the KNN regression model has successfully captured the underlying relationship between the predictor variable ('time') and the target variable ('compound') in the dataset.
+
+This means that averaged predicted compound sentiments of sentences in the movie fluctuated and touched the extream border points of the nuetral sentiment section. **** I will explain it later. 
