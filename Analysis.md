@@ -15,6 +15,7 @@ The reason for this could be that there were no available screenplay files onlin
 Since the goal of the code is to perform sentiment analysis on the text of the movie, the SRT subtitle file serves as a suitable alternative to the screenplay file. While the SRT file does not contain the same level of detail as a screenplay file, it still provides a good source of textual content for analysis.
 
 
+
 ```python
 import pandas as pd
 import numpy as np
