@@ -37,3 +37,30 @@ def sensentiment(x):
         
 sensentiment(blob)
 ```
+
+next step is to check the data with histograms of polarity and subjectivity.
+
+```python
+ax=df_sentiment["polarities"].hist(bins=20, density=True,stacked=False,color='teal', alpha=0.6)
+df_sentiment["polarities"].plot(kind='density',color='black')
+ax.set(xlabel='polarities')
+plt.xlim(-1,1)
+plt.show()
+
+ax=df_sentiment["subjectivity"].hist(bins=20, density=True,stacked=False,color='teal', alpha=0.6)
+df_sentiment["subjectivity"].plot(kind='density',color='black')
+ax.set(xlabel='subjectivity')
+plt.xlim(0,1)
+plt.show()
+```
+
+These lines of code are creating histograms and density plots for the sentiment analysis results of a movie. Specifically, the code is analyzing two sentiment features: polarity and subjectivity.
+
+Polarity and subjectivity are two common measures used in sentiment analysis to quantify the sentiment expressed in a text.
+
+Polarity is a measure of the sentiment expressed in a text, with a range from -1 to 1, where -1 represents a completely negative sentiment, 0 represents a neutral sentiment, and 1 represents a completely positive sentiment. Polarity is calculated by analyzing the words and phrases used in the text to determine if they express a positive or negative sentiment.
+
+Subjectivity, on the other hand, is a measure of the degree to which the text expresses an opinion or personal belief, rather than a fact. It ranges from 0 to 1, where 0 represents an objective statement or fact, and 1 represents a highly subjective statement expressing personal opinion or belief. Subjectivity is calculated by analyzing the use of words and phrases that indicate the presence of a personal opinion or belief, such as "I think", "I feel", or "in my opinion".
+
+
+
