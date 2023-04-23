@@ -269,3 +269,5 @@ and lets see the result:
 
 ![6](https://user-images.githubusercontent.com/109058050/233851799-64744afd-1f03-4182-a2c6-3074345abbf9.png)
 
+I didn't sort the word data, so their order inherently represents the timeline. Therefore, based on the figure above, we can see that although the trend of negative words fluctuated severely alongside the positive words, it still increased over the course of time.
+
