@@ -37,6 +37,7 @@ def sensentiment(x):
         
 sensentiment(blob)
 ```
+### 2- Some quick look into data
 
 next step is to check the data with histograms of polarity and subjectivity.
 
