@@ -92,4 +92,8 @@ plt.show()
 this code performs POS tagging on a list of words, creates a bar chart of the top five most frequent POS tags, and displys it.
 
 ![3](https://user-images.githubusercontent.com/109058050/233826770-bdbe45ba-6c7e-4f6b-b2a2-0aabe9ca0b35.png)
-ays it.
+
+PRP stands for personal pronoun, NNP stands for proper noun, NN stands for noun, VBP stands for verb in present tense, and IN stands for preposition/subordinating conjunction.
+
+A high frequency of PRP suggests that the characters in the movie speak using personal pronouns frequently, which may imply that they are expressing their feelings or thoughts more often than they are describing events or objects. Similarly, a high frequency of NNP may suggest that the movie has a significant focus on specific people, places, or things, such as proper names or specific locations. A high frequency of NN suggests that the characters in the movie are talking about objects or things more often than other parts of speech, and a high frequency of VBP suggests that the characters in the movie use present tense verbs frequently.
+
