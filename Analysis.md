@@ -98,3 +98,51 @@ PRP stands for personal pronoun, NNP stands for proper noun, NN stands for noun,
 
 A high frequency of PRP suggests that the characters in the movie speak using personal pronouns frequently, which may imply that they are expressing their feelings or thoughts more often than they are describing events or objects. Similarly, a high frequency of NNP may suggest that the movie has a significant focus on specific people, places, or things, such as proper names or specific locations. A high frequency of NN suggests that the characters in the movie are talking about objects or things more often than other parts of speech, and a high frequency of VBP suggests that the characters in the movie use present tense verbs frequently.
 
+### 3- Word and Sentence Sentiment
+
+The code uses the Natural Language Toolkit (nltk) library to perform sentiment analysis on words and sentences using the Vader Sentiment Intensity Analyzer.
+
+The first block of code imports the necessary libraries, initializes the Sentiment Intensity Analyzer, and creates empty lists to store the word and sentence sentiments.
+
+The second block of code uses a for loop to iterate over each word in a list of words (w). For each word, the code applies the polarity_scores method of the Sentiment Intensity Analyzer to obtain a dictionary of polarity scores (positive, negative, neutral, and compound). This dictionary is then appended to the w_sentiment list.
+
+The third block of code uses another for loop to iterate over each sentence in a list of sentences (s). For each sentence, the code applies the polarity_scores method of the Sentiment Intensity Analyzer to obtain a dictionary of polarity scores. This dictionary is then appended to the s_sentiment list.
+
+```python
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+analyzer = SentimentIntensityAnalyzer()
+w_sentiment=[]
+s_sentiment=[]
+for word in w:
+    w_sentiment.append(analyzer.polarity_scores(word))
+    
+for sentence in s:
+    s_sentiment.append(analyzer.polarity_scores(str(sentence)))
+```
+The output of this code is two lists (w_sentiment and s_sentiment) containing dictionaries of polarity scores for each word and sentence, respectively. The polarity scores represent the degree of positive, negative, and neutral sentiment, as well as an overall compound score that combines all three.
+
+```lua
+w_sentiment:
+[{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0},
+{'neg': 0.0, 'neu': 0.652, 'pos': 0.348, 'compound': 0.4215},
+{'neg': 0.0, 'neu': 0.714, 'pos': 0.286, 'compound': 0.2732},
+{'neg': 0.0, 'neu': 0.769, 'pos': 0.231, 'compound': 0.2732},
+{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0},
+...
+
+s_sentiment:
+[{'neg': 0.0, 'neu': 0.734, 'pos': 0.266, 'compound': 0.4404},
+{'neg': 0.0, 'neu': 0.761, 'pos': 0.239, 'compound': 0.4404},
+{'neg': 0.13, 'neu': 0.599, 'pos': 0.271, 'compound': 0.4588},
+{'neg': 0.0, 'neu': 0.841, 'pos': 0.159, 'compound': 0.34},
+{'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0},
+...]
+```
+
+These are the output of the VADER sentiment analysis tool, which is a lexicon and rule-based sentiment analysis tool specifically designed for social media.
+The values in the dictionary correspond to:
+   - neg: the negative sentiment score (from 0 to 1) of the input text
+   - neu: the neutral sentiment score (from 0 to 1) of the input text
+   - pos: the positive sentiment score (from 0 to 1) of the input text
+   - compound: the overall sentiment score (from -1 to 1) of the input text, calculated by normalizing the scores of neg, neu, and pos and then summing them up.
