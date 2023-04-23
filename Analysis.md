@@ -271,3 +271,193 @@ and lets see the result:
 
 I didn't sort the word data, so their order inherently represents the timeline. Therefore, based on the figure above, we can see that although the trend of negative words fluctuated severely alongside the positive words, it still increased over the course of time.
 
+## 3- Color Decomposition !!
+
+Color decomposition with k-means can be used to analyze the sentiment of a movie by identifying the predominant color palette used in the movie frames. This can be a useful metric because colors can evoke different emotions and moods, which can in turn impact the overall sentiment of a movie.
+
+For example, warm colors like red, orange, and yellow can evoke feelings of excitement, passion, and warmth, while cool colors like blue, green, and purple can evoke feelings of calmness, serenity, and sadness. By identifying the predominant colors in a movie, you can gain insights into the emotions and moods that the movie conveys to its audience.
+
+K-means clustering can be used to group similar colors together and identify the most dominant color palettes used in the movie. This can help in identifying the overall sentiment of the movie and can be a useful tool for movie critics and analysts to evaluate and compare movies based on their emotional impact. Using other distance metrics can also help in identifying the similarity of different color palettes and can lead to more accurate clustering and sentiment analysis.
+
+I used cv2 lib to calculate the dominant colors for each frame of the movie and making an average of 3
+```python
+import cv2
+import numpy as np
+from sklearn.cluster import KMeans
+import pandas as pd
+import os
+from tqdm import tqdm
+import re
+import matplotlib.pyplot as plt
+
+# function to calculate dominant colors in an image
+def calculate_dominant_colors(image, k=3):
+    # reshape the image to a 2D array of pixels
+    pixels = image.reshape(-1, 3)
+
+    # create a KMeans model and fit it to the pixel data
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    kmeans.fit(pixels)
+
+    # extract the dominant colors and their counts
+    colors, counts = np.unique(kmeans.labels_, return_counts=True)
+
+    # sort the colors by count in descending order
+    sorted_colors = colors[np.argsort(-counts)]
+
+    # convert the colors back to 8-bit values
+    colors = kmeans.cluster_centers_[sorted_colors].astype(np.uint8)
+
+    return colors
+
+# directory containing the frames
+frame_dir = '/*****/Documents/Frames'
+
+# list the files in the directory
+frame_files = os.listdir(frame_dir)
+
+# create an empty dataframe to store the results
+results_df = pd.DataFrame(columns=['frame', 'avg_red', 'avg_green', 'avg_blue'])
+
+# create an empty list to store the results
+results_list = []
+
+for frame_file in tqdm(frame_files, leave=True):
+    # read the frame from file
+    frame_path = os.path.join(frame_dir, frame_file)
+    frame = cv2.imread(frame_path)
+
+    if frame is not None:
+        # calculate the dominant colors in the frame
+        dominant_colors = calculate_dominant_colors(frame)
+
+        # calculate the average dominant color across all colors in the frame
+        average_color = np.mean(dominant_colors, axis=0)
+
+        # add the results to the dataframe
+        frame_number = int(re.search(r'\d+', os.path.splitext(frame_file)[0]).group())
+        results_list.append({'frame': frame_number, 'avg_red': average_color[2], 'avg_green': average_color[1], 'avg_blue': average_color[0]})
+    else:
+        print(f"Error reading file: {frame_path}")
+
+# create the results DataFrame from the list
+results_df = pd.DataFrame(results_list)
+
+# set the 'frame' column as the index
+results_df.set_index('frame', inplace=True)
+
+# print the results
+print(results_df.head())
+
+```
+with the results of: 
+
+```lua
+          avg_red  avg_green   avg_blue
+frame                                  
+136800  35.333333  57.333333  71.666667
+83400   57.000000  24.666667  43.666667
+87100   73.000000  16.333333   9.666667
+109400  24.000000  30.000000  23.666667
+106900  71.666667  46.666667  25.666667
+```
+
+(This process took almost 37 min with M1 mac !)
+
+```python
+results_df=results_df.sort_values('frame')
+
+# Define the RGB values from the dataframe
+df = results_df
+# Normalize the RGB values between 0 and 1
+df_norm = df / 255
+
+# Create a sequence of values from 0 to 1
+values = np.linspace(0, 1, len(df))
+
+# Create the colors from the RGB values
+colors = [(r, g, b) for r, g, b in zip(df_norm['avg_red'], df_norm['avg_green'], df_norm['avg_blue'])]
+
+# Create a figure and axis object
+fig, ax = plt.subplots()
+
+# Create a colorbar based on the values and colors
+colorbar = ax.imshow([colors], aspect='auto', extent=[0, 1480, 0, 1])
+
+# Set the title and labels
+ax.set_title('Color Spectrum')
+ax.set_xlabel('Frame')
+ax.set_ylabel('Color')
+ax.set_yticks([])
+
+# Show the colorbar
+plt.show()
+```
+The result is so intresting!
+
+![9](https://user-images.githubusercontent.com/109058050/233867043-0a3ac4b7-9541-4755-8f53-5ac39090e48b.png)
+
+
+Lets extract the main min and max colors domain!
+
+```python
+from sklearn.cluster import KMeans
+from sklearn.metrics import pairwise_distances
+import numpy as np
+import matplotlib.pyplot as plt
+# create a list of RGB values
+color_list = colors
+
+
+# create a list of RGB values
+# convert the list to a numpy array
+X = np.array(color_list)
+
+# specify the number of clusters
+n_clusters = 10
+
+# apply KMeans clustering with Manhattan distance metric
+kmeans = KMeans(n_clusters=n_clusters, init='k-means++', max_iter=300, n_init=10,
+                algorithm='full').fit(X)
+
+# get the cluster labels
+labels = kmeans.labels_
+
+# create an empty dictionary to store the cluster data
+cluster_data = {}
+
+# create a figure with subplots for each cluster
+fig, axs = plt.subplots(1, n_clusters, figsize=(20, 10))
+
+# loop over the clusters and store the color intervals
+for i in range(n_clusters):
+    cluster_colors = X[labels == i]
+    min_color = tuple(np.min(cluster_colors, axis=0))
+    max_color = tuple(np.max(cluster_colors, axis=0))
+    cluster_data[i] = {'min_color': min_color, 'max_color': max_color}
+    min_color = cluster_data[i]['min_color']
+    max_color = cluster_data[i]['max_color']
+    color_array = np.tile(np.array([min_color, max_color]), (10, 10, 1))
+    axs[i].imshow(color_array)
+    axs[i].set_xticks([])
+    axs[i].set_yticks([])
+    axs[i].set_title(f'Cluster {i+1}')
+
+# show the plot
+plt.show()
+```
+![10](https://user-images.githubusercontent.com/109058050/233867088-18d128f9-c53f-4533-bc69-c16c7da43e3d.png)
+
+
+### Discussion
+
+this section will be completed soon!
+
+p.s. I also used librosa to analyse the sound of the movie and I am uploading specific plot to those who are interested of them!
+
+
+![114](https://user-images.githubusercontent.com/109058050/233867293-48a7581b-6792-4680-b924-553e096a7393.png)
+![113](https://user-images.githubusercontent.com/109058050/233867295-3d8b4dc0-ce78-4377-91ab-8333120737aa.png)
+![112](https://user-images.githubusercontent.com/109058050/233867296-23ee7a11-9ee2-44fe-8dde-7d99a7402ccb.png)
+![110](https://user-images.githubusercontent.com/109058050/233867297-85d0c344-52b3-4851-8127-5598a0d3e741.png)
+
