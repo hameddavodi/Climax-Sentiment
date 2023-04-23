@@ -146,3 +146,85 @@ The values in the dictionary correspond to:
    - neu: the neutral sentiment score (from 0 to 1) of the input text
    - pos: the positive sentiment score (from 0 to 1) of the input text
    - compound: the overall sentiment score (from -1 to 1) of the input text, calculated by normalizing the scores of neg, neu, and pos and then summing them up.
+   
+```python
+sentence_sentiment=[]
+for i in range(len(s_sentiment)):
+    sentence_sentiment.append(s_sentiment[i]['compound'])
+sns.scatterplot(sentence_sentiment)
+```
+The code above creates a scatter plot using the Seaborn library in Python. It starts by iterating over a list called s_sentiment and appending the 'compound' value of each dictionary in the list to a new list called sentence_sentiment. The 'compound' value is a sentiment score that ranges between -1 (negative) and +1 (positive), indicating the overall sentiment of a text.
+
+Once sentence_sentiment has been populated, it is passed as the data parameter to the sns.scatterplot() function, which creates a scatter plot with the sentiment score values on the y-axis. The x-axis values are simply the indices of the elements in sentence_sentiment.
+
+![4](https://user-images.githubusercontent.com/109058050/233850896-0684614c-aeb4-4c2a-bdb8-fe49b18fb34c.png)
+
+
+We may see that the sentiment of the sentences equally distributed. However, lets plot the regression line!!
+
+```python
+from sklearn.linear_model import LinearRegression
+df = pd.DataFrame(s_sentiment)
+
+X = df.index.values.reshape(-1, 1) # use index as predictor variable
+y = df['compound'].values 
+
+# create and fit the linear regression model
+model = LinearRegression()
+model.fit(X, y)
+
+# predict the 'compound' values based on the predictor variable
+predicted_compound = model.predict(X)
+
+# plot the actual and predicted 'compound' values
+import matplotlib.pyplot as plt
+plt.scatter(X, y)
+plt.plot(X, predicted_compound, color='red')
+plt.xlabel('Time')
+plt.ylabel('Compound')
+plt.show()
+```
+
+![5](https://user-images.githubusercontent.com/109058050/233851011-a84e1a83-9da0-4772-be9d-583c546ce6cc.png)
+
+ Linear regression red line indicates that during the movie, average sentiments of the sentences become more and more negative. 
+
+Also we can be more specific with KMeans and KNeighbors. 
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from sklearn.neighbors import KNeighborsRegressor
+
+
+# define the predictor and target variables
+X = df.index.values.reshape(-1, 1) # use index as predictor variable
+y = df['compound'].values # use 'compound' column as target variable
+
+# apply k-means clustering to group the data into 3 clusters
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(y.reshape(-1,1))
+cluster_labels = kmeans.predict(y.reshape(-1,1))
+
+# apply KNN regression to predict the 'compound' values for each data point
+knn = KNeighborsRegressor(n_neighbors=6)
+knn.fit(X, y)
+predicted_compound = knn.predict(X)
+
+# plot the actual 'compound' values with color-coded cluster labels
+fig, ax = plt.subplots()
+scatter = ax.scatter(X, y, c=cluster_labels)
+legend = ax.legend(*scatter.legend_elements(),
+                    loc="upper right", title="Clusters")
+ax.add_artist(legend)
+ax.set_xlabel('Time')
+ax.set_ylabel('Compound')
+
+# plot the predicted 'compound' values as red dots
+plt.plot(X, predicted_compound, color='red')
+plt.show()
+```
+and lets see the results:
+
+![7](https://user-images.githubusercontent.com/109058050/233851168-ec142dbc-9882-4637-b58c-75e05dacdaae.png)
