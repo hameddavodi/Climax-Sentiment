@@ -243,3 +243,29 @@ The KNN algorithm works by finding the k closest data points to the query point 
 To interpret the predicted 'compound' values, you can compare them to the actual 'compound' values plotted in the same figure. If the predicted values closely follow the pattern of the actual values, it suggests that the KNN regression model has successfully captured the underlying relationship between the predictor variable ('time') and the target variable ('compound') in the dataset.
 
 This means that averaged predicted compound sentiments of sentences in the movie fluctuated and touched the extream border points of the nuetral sentiment section. **** I will explain it later. 
+
+
+What about the word sentiments during the movie?
+
+```python
+df_w_sentiment=pd.DataFrame(w_sentiment)
+# Resample the data with a window of size 200 and mean aggregation
+df_w_sentiment_avg = df_w_sentiment.rolling(window=100).mean()
+
+# Create a stacked bar chart
+plt.bar(range(len(df_w_sentiment_avg)), df_w_sentiment_avg['neg'], color='red')
+
+plt.bar(range(len(df_w_sentiment_avg)), df_w_sentiment_avg['pos'], bottom=df_w_sentiment_avg['neg'], color='green')
+
+# Add axis labels and legend
+plt.xlabel('Text')
+plt.ylabel('Sentiment Score')
+plt.legend(['Negative', 'Positive'])
+
+# Display the chart
+plt.show()
+```
+and lets see the result:
+
+![6](https://user-images.githubusercontent.com/109058050/233851799-64744afd-1f03-4182-a2c6-3074345abbf9.png)
+
