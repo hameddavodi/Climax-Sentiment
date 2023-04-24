@@ -65,6 +65,23 @@ Subjectivity, on the other hand, is a measure of the degree to which the text ex
 
 ![1](https://user-images.githubusercontent.com/109058050/233825584-a37c47c5-f837-4529-9282-1328f7df0fd1.png)
 
+The average polarity of a movie's sentences can provide some insight into the overall sentiment expressed in the film. Polarity refers to the degree of positivity or negativity expressed in a statement, with values ranging from -1 to 1. A polarity of 0 indicates a neutral sentiment, while a polarity of 0.25 suggests a slightly positive sentiment.
+
+If a movie has an average polarity of 0, it suggests that the overall sentiment expressed in the film is neutral. This means that the movie does not strongly express positive or negative emotions, but rather presents a balanced perspective. A neutral sentiment can be appropriate for certain genres of movies, such as documentaries or historical dramas, where an objective presentation of facts is necessary.
+
+On the other hand, if a movie has an average polarity of 0.25, it suggests a slightly positive sentiment. This means that the movie contains more positive expressions than negative ones. A slightly positive sentiment can make a movie more enjoyable and uplifting, and may be appropriate for genres such as romantic comedies or feel-good films.
+
+It's important to note, however, that the average polarity of a movie's sentences is just one aspect of the overall sentiment expressed in the film. Other factors, such as the tone of the actors' performances, the musical score, and the overall plot, can also contribute to the emotional impact of a movie.
+
+When the sentences of a movie and the events depicted on screen are opposite to each other, it can create a feeling of cognitive dissonance or emotional conflict in the audience.
+
+Cognitive dissonance occurs when people hold two conflicting beliefs or ideas at the same time. In the context of a movie, if the audience is presented with conflicting information through the dialogue and the events unfolding on screen, it can create a sense of confusion or unease. For example, if a character in a movie expresses love and affection for another character through their dialogue, but their actions and behavior towards that character are cruel and insensitive, it can create a sense of dissonance for the audience.
+
+Emotional conflict can also arise when the sentences of a movie and the events are opposite to each other. This occurs when the audience is presented with conflicting emotional cues. For example, if the dialogue in a movie suggests that a character is feeling happy and content, but the events depicted on screen are tragic and heartbreaking, it can create a sense of emotional turmoil for the audience.
+
+In some cases, the use of opposite sentences and events in a movie can be a deliberate storytelling technique used to create tension, suspense, or to convey a deeper message. However, if not executed properly, it can lead to a disjointed and confusing viewing experience.
+
+
 ![2](https://user-images.githubusercontent.com/109058050/233825585-cba7f66f-61a2-441d-aa63-dfdc957a84d6.png)
 
 The fact that the average subjectivity score is near 0 suggests that the majority of the sentences in the movie are expressing objective statements or facts, rather than personal opinions or beliefs. This could indicate that the movie is presenting a narrative that is focused on presenting information or events in a straightforward and objective manner, rather than trying to persuade or influence the audience's emotions or opinions.
@@ -448,10 +465,18 @@ plt.show()
 ```
 ![10](https://user-images.githubusercontent.com/109058050/233867088-18d128f9-c53f-4533-bc69-c16c7da43e3d.png)
 
+The use of color in movies can be a powerful tool for expressing emotions and setting the tone of a scene or the entire movie. Here is a discussion of how dark green, dark brown, gray, and dark red can be used to express different feelings and emotions in a movie:
 
-### Discussion
+    Dark green: This color is often associated with nature, growth, and renewal. In a movie, dark green can be used to create a sense of harmony, balance, and vitality. It can also be used to evoke feelings of freshness, youthfulness, and optimism. However, dark green can also be associated with envy and jealousy, so it can be used to express negative emotions such as greed, spite, or distrust.
 
-this section will be completed soon!
+    Dark brown: This color is often associated with earthiness, stability, and warmth. In a movie, dark brown can be used to create a sense of groundedness, security, and reliability. It can also be used to evoke feelings of comfort, coziness, and hominess. However, dark brown can also be associated with dullness, drabness, and monotony, so it can be used to express negative emotions such as boredom or melancholy.
+
+    Gray: This color is often associated with neutrality, balance, and sophistication. In a movie, gray can be used to create a sense of detachment, objectivity, and impartiality. It can also be used to evoke feelings of elegance, refinement, and understatedness. However, gray can also be associated with bleakness, depression, and conformity, so it can be used to express negative emotions such as sadness or conformity.
+
+    Dark red: This color is often associated with passion, intensity, and danger. In a movie, dark red can be used to create a sense of urgency, excitement, and vitality. It can also be used to evoke feelings of love, desire, and sensuality. However, dark red can also be associated with aggression, violence, and anger, so it can be used to express negative emotions such as rage or danger.
+### 4- Soundtrack !!
+
+
 
 p.s. I also used librosa to analyse the sound of the movie and I am uploading specific plot to those who are interested of them!
 
