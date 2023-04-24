@@ -483,6 +483,33 @@ p.s. I also used librosa to analyse the sound of the movie and I am uploading sp
 
 ![114](https://user-images.githubusercontent.com/109058050/233867293-48a7581b-6792-4680-b924-553e096a7393.png)
 ![113](https://user-images.githubusercontent.com/109058050/233867295-3d8b4dc0-ce78-4377-91ab-8333120737aa.png)
+
+The tempo of music can have a significant emotional impact on listeners. The range of 60 to 120 beats per minute (BPM) is generally considered a moderate tempo and can evoke a range of emotions and moods.
+
+At the lower end of the range (around 60 BPM), the music can feel slow and relaxed. This tempo can evoke feelings of calmness, tranquility, and contemplation. It can be a good choice for music that is meant to be soothing, such as meditation music, relaxation music, or lullabies.
+
+As the tempo increases towards the middle of the range (around 90-100 BPM), the music can start to feel more energetic and upbeat. This tempo can evoke feelings of happiness, excitement, and positivity. It can be a good choice for music that is meant to be uplifting and motivating, such as pop songs, dance music, or workout music.
+
+At the higher end of the range (around 120 BPM), the music can feel fast-paced and intense. This tempo can evoke feelings of urgency, excitement, and even anxiety or tension. It can be a good choice for music that is meant to be energizing, such as rock songs, electronic music, or fast-paced dance music.
+
+Onset strength is a concept used in the field of music psychology to describe the perceived intensity or strength of the beginning of a sound or musical note. It refers to the rate of change in sound pressure level at the onset of a sound.
+
+In terms of emotional expression, onset strength can contribute to the perceived intensity and arousal of a musical piece. Higher onset strength can create a sense of urgency or excitement, while lower onset strength can create a sense of calmness or tranquility.
+
+For example, a piece of music with a high onset strength might begin with a sudden, loud and energetic musical phrase, evoking feelings of excitement or intensity. On the other hand, a piece of music with a lower onset strength might begin with a soft, gradual, and calming musical phrase, evoking feelings of relaxation or peacefulness.
+
+Mel spectrum and uniform tempo prior are two concepts used in music information retrieval and audio analysis.
+
+Mel spectrum refers to a method of representing the frequency content of a sound signal, based on the properties of human auditory perception. The mel scale is a perceptual scale that maps frequency into a more linear and uniform space, reflecting the way in which humans perceive differences in pitch. The mel spectrum is a commonly used representation of audio signals in which the energy in different frequency bands is grouped together according to the mel scale. In terms of emotional expression, the mel spectrum can be used to analyze the spectral properties of music and identify patterns that are associated with particular emotional states or moods.
+
+Uniform tempo prior is a concept used in audio processing to describe the assumption that music typically has a regular, uniform tempo, or beat. This assumption is used to inform the analysis and processing of audio signals, for example, to segment music into sections based on the tempo or to align audio signals to a regular tempo. In terms of emotional expression, uniform tempo prior can be used to analyze the rhythmic properties of music and identify patterns that are associated with particular emotional states or moods, such as the fast and energetic rhythms of music associated with excitement or the slow and smooth rhythms of music associated with calmness.
+
+ The high frequency content of music can sometimes extend beyond 4 kHz and even reach up to 8 kHz or higher. The specific range of high frequencies that contribute to the emotional expression of music can vary depending on the musical genre, cultural context, and individual preferences.
+
+In general, high frequency content in music can contribute to the perceived brightness, sharpness, and clarity of musical sounds, which can have an impact on the emotional expression of the music. Music with high frequency content in the middle range (around 2-8 kHz) may be associated with feelings of excitement, energy, and intensity, as well as clarity and sharpness of sound. In contrast, music with lower frequency content and less high frequency content may be associated with feelings of calmness, relaxation, and warmth.
+
+In terms of emotional expression, the combination of high frequency content, mel spectrum, and uniform tempo prior can be used to analyze and identify patterns in the emotional expression of music, including its tempo, rhythm, melody, and harmonic structure. These features can all contribute to the emotional impact of music and help to communicate different emotional states and moods.
 ![112](https://user-images.githubusercontent.com/109058050/233867296-23ee7a11-9ee2-44fe-8dde-7d99a7402ccb.png)
 ![110](https://user-images.githubusercontent.com/109058050/233867297-85d0c344-52b3-4851-8127-5598a0d3e741.png)
+
 
