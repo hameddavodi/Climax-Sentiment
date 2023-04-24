@@ -285,7 +285,7 @@ and lets see the result:
 
 I didn't sort the word data, so their order inherently represents the timeline. Therefore, based on the figure above, we can see that although the trend of negative words fluctuated severely alongside the positive words, it still increased over the course of time.
 
-## 3- Color Decomposition !!
+### 4- Color Decomposition !!
 
 Color decomposition with k-means can be used to analyze the sentiment of a movie by identifying the predominant color palette used in the movie frames. This can be a useful metric because colors can evoke different emotions and moods, which can in turn impact the overall sentiment of a movie.
 
