@@ -498,6 +498,11 @@ In terms of emotional expression, onset strength can contribute to the perceived
 
 For example, a piece of music with a high onset strength might begin with a sudden, loud and energetic musical phrase, evoking feelings of excitement or intensity. On the other hand, a piece of music with a lower onset strength might begin with a soft, gradual, and calming musical phrase, evoking feelings of relaxation or peacefulness.
 
+
+![112](https://user-images.githubusercontent.com/109058050/233867296-23ee7a11-9ee2-44fe-8dde-7d99a7402ccb.png)
+![110](https://user-images.githubusercontent.com/109058050/233867297-85d0c344-52b3-4851-8127-5598a0d3e741.png)
+
+
 Mel spectrum and uniform tempo prior are two concepts used in music information retrieval and audio analysis.
 
 Mel spectrum refers to a method of representing the frequency content of a sound signal, based on the properties of human auditory perception. The mel scale is a perceptual scale that maps frequency into a more linear and uniform space, reflecting the way in which humans perceive differences in pitch. The mel spectrum is a commonly used representation of audio signals in which the energy in different frequency bands is grouped together according to the mel scale. In terms of emotional expression, the mel spectrum can be used to analyze the spectral properties of music and identify patterns that are associated with particular emotional states or moods.
@@ -509,7 +514,3 @@ Uniform tempo prior is a concept used in audio processing to describe the assump
 In general, high frequency content in music can contribute to the perceived brightness, sharpness, and clarity of musical sounds, which can have an impact on the emotional expression of the music. Music with high frequency content in the middle range (around 2-8 kHz) may be associated with feelings of excitement, energy, and intensity, as well as clarity and sharpness of sound. In contrast, music with lower frequency content and less high frequency content may be associated with feelings of calmness, relaxation, and warmth.
 
 In terms of emotional expression, the combination of high frequency content, mel spectrum, and uniform tempo prior can be used to analyze and identify patterns in the emotional expression of music, including its tempo, rhythm, melody, and harmonic structure. These features can all contribute to the emotional impact of music and help to communicate different emotional states and moods.
-![112](https://user-images.githubusercontent.com/109058050/233867296-23ee7a11-9ee2-44fe-8dde-7d99a7402ccb.png)
-![110](https://user-images.githubusercontent.com/109058050/233867297-85d0c344-52b3-4851-8127-5598a0d3e741.png)
-
-
