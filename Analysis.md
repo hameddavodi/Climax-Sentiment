@@ -471,7 +471,7 @@ The use of color in movies can be a powerful tool for expressing emotions and se
     Gray: This color is often associated with neutrality, balance, and sophistication. In a movie, gray can be used to create a sense of detachment, objectivity, and impartiality. It can also be used to evoke feelings of elegance, refinement, and understatedness. However, gray can also be associated with bleakness, depression, and conformity, so it can be used to express negative emotions such as sadness or conformity.
 
     Dark red: This color is often associated with passion, intensity, and danger. In a movie, dark red can be used to create a sense of urgency, excitement, and vitality. It can also be used to evoke feelings of love, desire, and sensuality. However, dark red can also be associated with aggression, violence, and anger, so it can be used to express negative emotions such as rage or danger.
-### 4- Soundtrack !!
+### 5- Soundtrack !!
 
 
 
@@ -506,14 +506,14 @@ Mel spectrum refers to a method of representing the frequency content of a sound
 
 Uniform tempo prior is a concept used in audio processing to describe the assumption that music typically has a regular, uniform tempo, or beat. This assumption is used to inform the analysis and processing of audio signals, for example, to segment music into sections based on the tempo or to align audio signals to a regular tempo. In terms of emotional expression, uniform tempo prior can be used to analyze the rhythmic properties of music and identify patterns that are associated with particular emotional states or moods, such as the fast and energetic rhythms of music associated with excitement or the slow and smooth rhythms of music associated with calmness.
 
- The high frequency content of music can sometimes extend beyond 4 kHz and even reach up to 8 kHz or higher. The specific range of high frequencies that contribute to the emotional expression of music can vary depending on the musical genre, cultural context, and individual preferences.
+The high frequency content of music can sometimes extend beyond 4 kHz and even reach up to 8 kHz or higher. The specific range of high frequencies that contribute to the emotional expression of music can vary depending on the musical genre, cultural context, and individual preferences.
 
 In general, high frequency content in music can contribute to the perceived brightness, sharpness, and clarity of musical sounds, which can have an impact on the emotional expression of the music. Music with high frequency content in the middle range (around 2-8 kHz) may be associated with feelings of excitement, energy, and intensity, as well as clarity and sharpness of sound. In contrast, music with lower frequency content and less high frequency content may be associated with feelings of calmness, relaxation, and warmth.
 
 In terms of emotional expression, the combination of high frequency content, mel spectrum, and uniform tempo prior can be used to analyze and identify patterns in the emotional expression of music, including its tempo, rhythm, melody, and harmonic structure. These features can all contribute to the emotional impact of music and help to communicate different emotional states and moods.
 
 
-Further research:
+### 6- Further research:
 
 Juslin PN, Västfjäll D. Emotional responses to music: the need to consider underlying mechanisms. Behav Brain Sci. 2008 Oct;31(5):559-75; discussion 575-621. doi: 10.1017/S0140525X08005293. PMID: 18826699.
 Coutinho E, Cangelosi A. Musical emotions: predicting second-by-second subjective feelings of emotion from low-level psychoacoustic features and physiological measurements. Emotion. 2011 Aug;11(4):921-37. doi: 10.1037/a0024700. PMID: 21859207.
