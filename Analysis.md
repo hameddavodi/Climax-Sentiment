@@ -514,3 +514,14 @@ Uniform tempo prior is a concept used in audio processing to describe the assump
 In general, high frequency content in music can contribute to the perceived brightness, sharpness, and clarity of musical sounds, which can have an impact on the emotional expression of the music. Music with high frequency content in the middle range (around 2-8 kHz) may be associated with feelings of excitement, energy, and intensity, as well as clarity and sharpness of sound. In contrast, music with lower frequency content and less high frequency content may be associated with feelings of calmness, relaxation, and warmth.
 
 In terms of emotional expression, the combination of high frequency content, mel spectrum, and uniform tempo prior can be used to analyze and identify patterns in the emotional expression of music, including its tempo, rhythm, melody, and harmonic structure. These features can all contribute to the emotional impact of music and help to communicate different emotional states and moods.
+
+
+Further research:
+
+Juslin PN, Västfjäll D. Emotional responses to music: the need to consider underlying mechanisms. Behav Brain Sci. 2008 Oct;31(5):559-75; discussion 575-621. doi: 10.1017/S0140525X08005293. PMID: 18826699.
+Coutinho E, Cangelosi A. Musical emotions: predicting second-by-second subjective feelings of emotion from low-level psychoacoustic features and physiological measurements. Emotion. 2011 Aug;11(4):921-37. doi: 10.1037/a0024700. PMID: 21859207.
+
+In fact, the first article you mentioned, by Juslin and Västfjäll, argues that emotional responses to music are complex and multidimensional, and that they involve various mechanisms such as cognitive appraisal, physiological responses, and cultural factors. The authors suggest that any theory or model of musical emotions must take into account these underlying mechanisms.
+
+Similarly, the second article you mentioned, by Coutinho and Cangelosi, proposes a model to predict subjective feelings of emotion from low-level psychoacoustic features and physiological measurements. However, this model is based on a carefully designed experiment that involved controlled stimuli and a small group of participants. 
+
